@@ -6,6 +6,10 @@ npm install
 
 npm run start
 
+## note
+
+if hosted database link has been expired replace .env file with new localhost database link
+
 ## base url is 
 base => http://localhost:5000/api
 
