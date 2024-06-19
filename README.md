@@ -25,9 +25,9 @@ base => http://localhost:5000/api
 | `base/cart/update`     | Put    | update item quantity | { "quantity":5,"recordId":1 } A                                                |
 | `base/orders` | Post    | create order                        | N/A                                                |
 | `base/users/:userId/orders`     | Get   | get user orders  |
-| `base/orders/apply-coupon` | Post    | apply coupon to order   | `{ "name": "coupon name" , "orderId":1 } `
-| `base/orders/:orderId`     | Get   | get one order  |
-| `base/orders/:orderId/status` | Put    | update order status   | `{ "status":"cancelled or paid"} `
+| `base/orders/apply-coupon` | Post    | apply coupon to order , restricted to order owner or admin   | `{ "name": "coupon name" , "orderId":1 } `
+| `base/orders/:orderId`     | Get   | get one order , restricted to order owner or admin |
+| `base/orders/:orderId/status` | Put    | update order status , restricted to order owner or admin   | `{ "status":"cancelled or paid"} `
 
 ## postman collection link
 https://martian-escape-472383.postman.co/workspace/Team-Workspace~d50cd663-4342-4e48-81ec-470427b4110b/collection/26807556-313e317a-48d4-4706-bfbf-30c9e884eef1?action=share&creator=26807556
