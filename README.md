@@ -27,8 +27,10 @@ base => http://localhost:5000/api
 | `base/users/:userId/orders`     | Get   | get user orders  |
 | `base/orders/apply-coupon` | Post    | apply coupon to order   | `{ "name": "coupon name" , "orderId":1 } `
 | `base/orders/:orderId`     | Get   | get one order  |
-| `base/orders/:orderId/status` | Put    | apply coupon to order   | `{ "status":"cancelled or paid"} `
+| `base/orders/:orderId/status` | Put    | update order status   | `{ "status":"cancelled or paid"} `
 
+## postman collection link
+https://martian-escape-472383.postman.co/workspace/Team-Workspace~d50cd663-4342-4e48-81ec-470427b4110b/collection/26807556-313e317a-48d4-4706-bfbf-30c9e884eef1?action=share&creator=26807556
 
 
 ## License
