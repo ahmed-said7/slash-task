@@ -17,12 +17,11 @@ base => http://localhost:5000/api
 | `base/users/signup` | Post    | signup                        | {name:"ahmed",email:"ahmed@gmail.com","password":"12345678","role":"admin or user"}/A                                                |
 | `base/users/:userId/orders`     | Get   | get user orders         
 | `base/cart/add` | Post    | add product to cart |  { "productId":1 }              |
-| `/base/cart/remove` | DELETE | remove cart item by item id provided as record every item in cart has id | { "recordId":1   } A                                                |
-| `/api/posts`     | GET    | Get all posts                         | N/A                                                |
-| `/api/posts/:id` | GET    | Get post by ID                        | N/A                                                |
-| `/api/posts`     | POST   | Create a new post                     | `{ "title": "New Post", "content": "Lorem ipsum..." }` |
-| `/api/posts/:id` | PUT    | Update post details by ID             | `{ "title": "Updated Post" }`                      |
-| `/api/posts/:id` | DELETE | Delete post by ID                     | N/A                                                
+| `/base/cart/remove` | DELETE | remove cart item by item id provided as record id in request body and each cart has an array of items | { "recordId":1   } A                                                |
+| `base/cart/update`     | Put    | update item quantity | { "quantity":5,"recordId":1 } A                                                |
+| `base/cart/:userId` | GET    | Get user cart                        | N/A                                                |
+| `base/product`     | POST   | Create a product                     | `{ "name": "labtop","stock":30,"price":59, "description": "Lorem ipsum..." }` |
+| `base/coupon` | Post    | create coupon             | `{ "name": "Updated Post","couponExpiresIn":"03/22/2025","discount":80 }` 
 
 
 
