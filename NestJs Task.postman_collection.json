@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "313e317a-48d4-4706-bfbf-30c9e884eef1",
+		"name": "NestJs Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26807556",
+		"_collection_link": "https://martian-escape-472383.postman.co/workspace/Team-Workspace~d50cd663-4342-4e48-81ec-470427b4110b/collection/26807556-313e317a-48d4-4706-bfbf-30c9e884eef1?action=share&source=collection_link&creator=26807556"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ahmed@gmail.com\",\"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "email and password are required"
+					},
+					"response": []
+				},
+				{
+					"name": "get user order by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users/1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"1",
+								"orders"
+							]
+						},
+						"description": "[http://localhost:5000/api/users/user_Id/orders](http://localhost:5000/api/users/1/orders)\n\nget all orders by user id parameter"
+					},
+					"response": []
+				},
+				{
+					"name": "signup user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ahmed\",\"email\":\"ahmed@gmail.com\",\"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"signup"
+							]
+						},
+						"description": "role field is optional can be user or admin by default user\n\nemail and password and name body fields are required"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc5MDU5MiwiZXhwIjoxNzE5Mzk1MzkyfQ.A6sBfJZ5uaAPEFzxiCjep8ZFQHxQ6seCBC7LhD6obP8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "user access route who logged in"
+					},
+					"response": []
+				},
+				{
+					"name": "apply coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc4ODUxNiwiZXhwIjoxNzE5MzkzMzE2fQ.Z7-qCjNVMsC6Rz5BA36l4OETJ4HprhP5ziwAD4wzmpI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\":1,\r\n    \"name\":\"ramadan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/orders/apply-coupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"apply-coupon"
+							]
+						},
+						"description": "name of the coupon and order id are required\n\nyou should be order owner or admin"
+					},
+					"response": []
+				},
+				{
+					"name": "get order by id only order owner or admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc5MDU5MiwiZXhwIjoxNzE5Mzk1MzkyfQ.A6sBfJZ5uaAPEFzxiCjep8ZFQHxQ6seCBC7LhD6obP8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"1"
+							]
+						},
+						"description": "get order by id only order owner or admin"
+					},
+					"response": []
+				},
+				{
+					"name": "update order status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc5MDU5MiwiZXhwIjoxNzE5Mzk1MzkyfQ.A6sBfJZ5uaAPEFzxiCjep8ZFQHxQ6seCBC7LhD6obP8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"paid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/orders/1/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders",
+								"1",
+								"status"
+							]
+						},
+						"description": "status are required cancelled or paid body field\n\n[http://localhost:5000/api/orders/order_id](http://localhost:5000/api/orders/order)/status\n\norder Id parameter are required"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add product to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc5MDU5MiwiZXhwIjoxNzE5Mzk1MzkyfQ.A6sBfJZ5uaAPEFzxiCjep8ZFQHxQ6seCBC7LhD6obP8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"add"
+							]
+						},
+						"description": "product id is required body field"
+					},
+					"response": []
+				},
+				{
+					"name": "update item quantity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc4NDc3OCwiZXhwIjoxNzE5Mzg5NTc4fQ.4UpB_c7pNXtiYxap2lNvvBBtqDQZSZt8VFTqtLFUoPU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recordId\":1,\"quantity\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cart/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"update"
+							]
+						},
+						"description": "item id is required provided as record id\n\nquantity is required"
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc4NDc3OCwiZXhwIjoxNzE5Mzg5NTc4fQ.4UpB_c7pNXtiYxap2lNvvBBtqDQZSZt8VFTqtLFUoPU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recordId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cart/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"remove"
+							]
+						},
+						"description": "record id is required item of cart id"
+					},
+					"response": []
+				},
+				{
+					"name": "get user cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc4NDc3OCwiZXhwIjoxNzE5Mzg5NTc4fQ.4UpB_c7pNXtiYxap2lNvvBBtqDQZSZt8VFTqtLFUoPU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/cart/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"cart",
+								"1"
+							]
+						},
+						"description": "[http://localhost:5000/api/cart/user_id](http://localhost:5000/api/cart/1)\n\nuser id parameter"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc5MDU5MiwiZXhwIjoxNzE5Mzk1MzkyfQ.A6sBfJZ5uaAPEFzxiCjep8ZFQHxQ6seCBC7LhD6obP8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"candle\",\"price\":\"12\",\"description\":\"cute cnadle\",\"stock\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							]
+						},
+						"description": "name price description stock are required"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "create coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcxODc5MDU5MiwiZXhwIjoxNzE5Mzk1MzkyfQ.A6sBfJZ5uaAPEFzxiCjep8ZFQHxQ6seCBC7LhD6obP8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ramadan\",\"couponExpiresIn\":\"03/22/2025\",\"discount\":80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/coupon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"coupon"
+							]
+						},
+						"description": "name couponExpiresIn discount are required"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
