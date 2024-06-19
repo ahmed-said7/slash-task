@@ -21,7 +21,11 @@ base => http://localhost:5000/api
 | `base/cart/update`     | Put    | update item quantity | { "quantity":5,"recordId":1 } A                                                |
 | `base/cart/:userId` | GET    | Get user cart                        | N/A                                                |
 | `base/product`     | POST   | Create a product                     | `{ "name": "labtop","stock":30,"price":59, "description": "Lorem ipsum..." }` |
-| `base/coupon` | Post    | create coupon             | `{ "name": "Updated Post","couponExpiresIn":"03/22/2025","discount":80 }` 
+| `base/coupon` | Post    | create coupon             | `{ "name": "Updated Post","couponExpiresIn":"03/22/2025","discount":80 }` |
+| `base/cart/update`     | Put    | update item quantity | { "quantity":5,"recordId":1 } A                                                |
+| `base/cart/:userId` | GET    | Get user cart                        | N/A                                                |
+| `base/product`     | POST   | Create a product                     | `{ "name": "labtop","stock":30,"price":59, "description": "Lorem ipsum..." }` |
+| `base/coupon` | Post    | create coupon             | `{ "name": "Updated Post","couponExpiresIn":"03/22/2025","discount":80 }`
 
 
 
