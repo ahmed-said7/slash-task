@@ -7,10 +7,9 @@ npm install
 npm run start
 
 ## note
-
 replace .env database url with your own database url
 you can import postman collection from project files here or you can
-use collection link
+use collection postman collection link , link is available in readme.md file
 
 ## base url is 
 base => http://localhost:5000/api
