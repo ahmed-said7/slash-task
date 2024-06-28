@@ -8,7 +8,9 @@ npm run start
 
 ## note
 
-if hosted database link has been expired replace .env file with new localhost database link
+replace .env database url with your own database url
+you can import postman collection from project files here or you can
+use collection link
 
 ## base url is 
 base => http://localhost:5000/api
